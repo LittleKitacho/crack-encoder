@@ -1,0 +1,7 @@
+# Editor folders
+.theia
+.vscode
+
+# Python cache files
+__pycache__
+*.pyc
