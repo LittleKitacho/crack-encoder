@@ -80,15 +80,29 @@ if __name__ == "__main__":
 
         if a == 'encode':
 
-            b = input('Please input a string to encode.  ')
-            
-            print('Your encoded string is \'' + encode(b) + '"'")
+            b = input('Please input an encoded string to decode.  ')
+            c = input('Please input the strength of the encoding.  ')
+            c_c = False
+
+            while not c_c:
+
+                try:
+                    int(c)
+
+                except:
+                    c = input('That isn\'t a number.  Please input the strength of the encoding.  ')
+
+                else:
+                    length = int(c)
+                    c_c = True
+
+            print('Your encoded string is \'' + encode(b, length) + "'")
 
         elif a == 'decode':
 
-            b = input('Please input an encoded string to decode.  ')
+            b = input('Please input a string to decode.  ')
             
-            print('Your decoded string is \'' + encode(b) + "'")
+            print('Your decoded string is \'' + decode(b) + "'")
 
         else:
             a = input('Sorry, please either input \'encode\' or \'decode\'.  ') 
